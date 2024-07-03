@@ -38,14 +38,10 @@ public class LogginLab {
     // Write a method called thresholdReached, returns true if argument 'limit' is over the threshold.
 
     public boolean thresholdReached(Integer limit){
-        boolean Reached = thresholdExceeds(limit);
-
-        if (Reached) {
-            logger.log(Level.INFO,  "ThresholdReached", limit);
-        } else {
-            logger.log(Level.INFO, "ThresholdExceeded", limit);
-        }
-        return Reached;
+        if (this.threshold > limit)
+            return true;
+        else
+            return false;
     }
     // use thresholdExceeds for a pattern.
 
